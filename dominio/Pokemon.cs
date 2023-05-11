@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace winform_app
+namespace dominio
 {
-    internal class Pokemon
+   public  class Pokemon
     {
         public int Numero { get; set; }
         public string Nombre { get; set; }
@@ -14,5 +14,6 @@ namespace winform_app
         public string UrlImagen { get; set; }
         public Elementos Tipo { get; set; }
         public Elementos Debilidad  { get; set; }
+     
     }
 }

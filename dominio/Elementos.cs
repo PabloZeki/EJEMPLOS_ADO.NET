@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace winform_app
+namespace dominio
 {
-    internal class Elementos
+   public class Elementos
     {
         public int Id { get; set; }
         public string Descripcion { get; set; }

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;                             // agregar esta libreria
+using dominio;
 
-namespace winform_app
+namespace negocio
 {
-    internal class PokemonNegocio
+    public class PokemonNegocio
     {
         public List<Pokemon> listar()                          // abrimos una coleccion
         {
@@ -52,6 +53,7 @@ namespace winform_app
                 }
 
                 conexion.Close();                           // cerramos conexion
+
                 return lista;
 
             }
@@ -60,7 +62,7 @@ namespace winform_app
 
                 throw ex;
             }
-
+            
            
         }
 
