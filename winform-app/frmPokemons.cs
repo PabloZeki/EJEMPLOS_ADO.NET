@@ -10,10 +10,12 @@ using System.Windows.Forms;
 using dominio;
 using negocio;
 
+
 namespace winform_app
 {
     public partial class frmPokemons : Form
     {
+       // private List<Elementos> listaElementos;
         private List<Pokemon> listaPokemon;          // me guardo lo que me devuelve la base de datos,en un atributo privado list o colection usando una variable llamada listapokemon
         public frmPokemons()
         {
@@ -22,10 +24,14 @@ namespace winform_app
 
         private void frmPokemons_Load(object sender, EventArgs e)
         {
-            PokemonNegocio negocio = new PokemonNegocio();
-            listaPokemon = negocio.listar();
+           // ElementoNegocio elemento = new ElementoNegocio();
+            //listaElementos = elemento.listar();
+           // dgvPokemons.DataSource = listaElementos;
+           
+           PokemonNegocio negocio = new PokemonNegocio();
+          listaPokemon = negocio.listar();
             dgvPokemons.DataSource = listaPokemon;  // con estas lineas de codigo traemos la data de las columnas solicitadas
-            dgvPokemons.Columns["UrlImagen"].Visible = false; // para ocultar las direcciones url de la tabla sql
+           dgvPokemons.Columns["UrlImagen"].Visible = false; // para ocultar las direcciones url de la tabla sql
 
            cargarimagen(listaPokemon[0].UrlImagen);  // mandamos la lista pokemon a la picturebox con referencia al primer elemento de la lista [0] y la direccion 
 
@@ -57,6 +63,12 @@ namespace winform_app
 
 
 
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            FrmAltaPokemon agregar = new FrmAltaPokemon();
+            agregar.ShowDialog();
         }
     }
 }
