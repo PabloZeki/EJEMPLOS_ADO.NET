@@ -11,7 +11,7 @@ namespace negocio
 
     {
         private SqlConnection conexion;           // declaramos las variables que necesitamos para establecer la conexion a DB,asi poder usarlas 
-        private SqlCommand comando;
+        private SqlCommand comando;                
         private SqlDataReader lector;
 
         public SqlDataReader Lector
@@ -59,6 +59,12 @@ namespace negocio
 
                 throw ex;
             }
+        }
+
+        public void setearParametro(string nombre,object valor)      // en este metodo el string es por el nombre del parametro que recibe,y el valor u object es porque vale cualquier tipo de dato que le mandemos(int,string,etc)
+        {
+            comando.Parameters.AddWithValue(nombre,valor);
+            
         }
 
         public void cerrarConexion()
